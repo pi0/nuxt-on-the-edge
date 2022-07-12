@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "NITRO_PRESET=vercel-edge nuxt build",
+    "dev": "nuxt dev"
+  },
+  "devDependencies": {
+    "nuxt": "3.0.0-rc.4"
+  },
+  "resolutions": {
+    "nitropack": "npm:nitropack-edge@latest"
+  }
+}
