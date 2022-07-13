@@ -28,7 +28,7 @@ const generatedAt = useState('generatedAt', () => new Date().toISOString())
       <!-- <Meta name="twitter:image" content="/static/og/card.png" /> -->
       <Meta name="twitter:image:alt" content="The Vercel and Nuxt logos" />
     </Head>
-    <div>
+    <div id="container">
       <AppBackground />
       <main>
         <h1>Hello from the edge!</h1>
@@ -104,12 +104,16 @@ body {
   }
 }
 
+#container {
+  height: 100vh;
+}
+
 /* main */
 
 main {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   padding: 2.5rem;
   box-sizing: border-box;
 }
