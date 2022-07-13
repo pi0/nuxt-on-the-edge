@@ -5,9 +5,6 @@
     "dev": "nuxt dev"
   },
   "devDependencies": {
-    "nuxt": "3.0.0-rc.4"
-  },
-  "resolutions": {
-    "nitropack": "npm:nitropack-edge@latest"
+    "nuxt": "^3.0.0-rc.5"
   }
 }
