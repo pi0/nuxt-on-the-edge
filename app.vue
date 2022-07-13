@@ -1,8 +1,4 @@
 <script setup lang="ts">
-const { data: info } = await useAsyncData('info', () => globalThis.$fetch('/api/info', {
-  headers: useRequestHeaders(['x-forwarded-for', 'x-vercel-ip-city'])
-}))
-
 // const info = useState('info', () => {
 //   const event = useRequestEvent()
 //   const cityHeader = event.req.headers['x-vercel-ip-city'] as string
@@ -11,12 +7,27 @@ const { data: info } = await useAsyncData('info', () => globalThis.$fetch('/api/
 //   const ip = ipHeader ? ipHeader.split(',')[0] : '-'
 //   return { city, ip }
 // })
+const { data: info } = await useAsyncData('info', () => globalThis.$fetch('/api/info', {
+  headers: useRequestHeaders(['x-forwarded-for', 'x-vercel-ip-city'])
+}))
 
 const generatedAt = useState('generatedAt', () => new Date().toISOString())
 </script>
 
 <template>
   <div>
+
+    <Head>
+      <Title>Nuxt on the edge</title>
+      <Meta name="description" content="HTML, dynamically rendered in a city near you" />
+      <Meta name="twitter:card" content="summary_large_image" />
+      <Meta name="twitter:site" content="@nuxt_js" />
+      <Meta name="twitter:creator" content="@nuxt_js" />
+      <Meta name="twitter:title" content="Nuxt on the edge" />
+      <Meta name="twitter:description" content="HTML, dynamically rendered in a city near you" />
+      <!-- <Meta name="twitter:image" content="/static/og/card.png" /> -->
+      <Meta name="twitter:image:alt" content="The Vercel and Nuxt logos" />
+    </Head>
     <div style="height: 100%;">
       <AppBackground />
       <main>
