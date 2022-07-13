@@ -25,8 +25,9 @@ const generatedAt = useState('generatedAt', () => new Date().toISOString())
       <Meta name="twitter:creator" content="@nuxt_js" />
       <Meta name="twitter:title" content="Nuxt on the edge" />
       <Meta name="twitter:description" content="HTML, dynamically rendered in a city near you" />
-      <!-- <Meta name="twitter:image" content="/static/og/card.png" /> -->
+      <Meta name="twitter:image" content="https://nuxt-on-the-edge.vercel.app/og-card.png" />
       <Meta name="twitter:image:alt" content="The Vercel and Nuxt logos" />
+      <Meta name="og:image" content="https://nuxt-on-the-edge.vercel.app/og-card.png" />
     </Head>
     <div style="height: 100%">
       <AppBackground />
