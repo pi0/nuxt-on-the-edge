@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// const info = useState('info', () => {
+// const info = useState(() => {
 //   const event = useRequestEvent()
 //   const cityHeader = event.req.headers['x-vercel-ip-city'] as string
 //   const city = cityHeader ? decodeURIComponent(cityHeader) : '-'
@@ -7,11 +7,11 @@
 //   const ip = ipHeader ? ipHeader.split(',')[0] : '-'
 //   return { city, ip }
 // })
-const { data: info } = await useAsyncData('info', () => globalThis.$fetch('/api/info', {
+const { data: info } = await useAsyncData(() => globalThis.$fetch('/api/info', {
   headers: useRequestHeaders(['x-forwarded-for', 'x-vercel-ip-city'])
 }))
 
-const generatedAt = useState('generatedAt', () => new Date().toISOString())
+const generatedAt = useState(() => new Date().toISOString())
 </script>
 
 <template>
