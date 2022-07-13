@@ -15,7 +15,7 @@ const generatedAt = useState('generatedAt', () => new Date().toISOString())
 </script>
 
 <template>
-  <div>
+  <div id="container">
 
     <Head>
       <Title>Nuxt on the edge</title>
@@ -28,7 +28,7 @@ const generatedAt = useState('generatedAt', () => new Date().toISOString())
       <!-- <Meta name="twitter:image" content="/static/og/card.png" /> -->
       <Meta name="twitter:image:alt" content="The Vercel and Nuxt logos" />
     </Head>
-    <div id="container">
+    <div style="height: 100%">
       <AppBackground />
       <main>
         <h1>Hello from the edge!</h1>
@@ -89,6 +89,11 @@ body {
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background: var(--bg);
   color: var(--fg);
+}
+
+#__nuxt,
+#container {
+  height: 100%;
   overflow: hidden;
 }
 
@@ -104,9 +109,6 @@ body {
   }
 }
 
-#container {
-  height: 100vh;
-}
 
 /* main */
 
