@@ -1,42 +1,33 @@
-# Nuxt 3 Minimal Starter
+# Nuxt on The Edge
 
-Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
+Inspired from [sveltekit-on-the-edge](https://github.com/Rich-Harris/sveltekit-on-the-edge) and [react-on-the-edge](https://github.com/vercel-labs/react-on-the-edge). It uses [Nuxt 3](https://v3.nuxtjs.org/) and [Nitro](https://nitro.unjs.io/) to deploy **Vue** based SSR on the edge.
+
+**Online Demo:** https://nuxt-on-the-edge.vercel.app
 
 ## Setup
+
+Enable corepack:
+
+```bash
+npx corepack enable
+```
 
 Make sure to install the dependencies:
 
 ```bash
-# yarn
 yarn install
-
-# npm
-npm install
-
-# pnpm
-pnpm install --shamefully-hoist
 ```
 
-## Development Server
+## Development
 
 Start the development server on http://localhost:3000
 
 ```bash
-npm run dev
+yarn dev
 ```
 
 ## Production
 
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
+The easiest way to deploy your app is to link the repo to your Vercel account. Alternatively, you can create a production build locally using `yarn build`.
 
 Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.
