@@ -7,27 +7,40 @@
 //   const ip = ipHeader ? ipHeader.split(',')[0] : '-'
 //   return { city, ip }
 // })
-const { data: info } = await useAsyncData(() => globalThis.$fetch('/api/info', {
-  headers: useRequestHeaders(['x-forwarded-for', 'x-vercel-ip-city'])
-}))
+const { data: info } = await useAsyncData(() =>
+  globalThis.$fetch('/api/info', {
+    headers: useRequestHeaders(['x-forwarded-for', 'x-vercel-ip-city']),
+  })
+)
 
 const generatedAt = useState(() => new Date().toISOString())
 </script>
 
 <template>
   <div id="container">
-
     <Head>
-      <Title>Nuxt on the edge</title>
-      <Meta name="description" content="HTML, dynamically rendered in a city near you" />
+      <Title>Nuxt on the edge</Title>
+      <Meta
+        name="description"
+        content="HTML, dynamically rendered in a city near you"
+      />
       <Meta name="twitter:card" content="summary_large_image" />
       <Meta name="twitter:site" content="@nuxt_js" />
       <Meta name="twitter:creator" content="@nuxt_js" />
       <Meta name="twitter:title" content="Nuxt on the edge" />
-      <Meta name="twitter:description" content="HTML, dynamically rendered in a city near you" />
-      <Meta name="twitter:image" content="https://nuxt-on-the-edge.vercel.app/og-card.png" />
+      <Meta
+        name="twitter:description"
+        content="HTML, dynamically rendered in a city near you"
+      />
+      <Meta
+        name="twitter:image"
+        content="https://nuxt-on-the-edge.vercel.app/og-card.png"
+      />
       <Meta name="twitter:image:alt" content="The Vercel and Nuxt logos" />
-      <Meta name="og:image" content="https://nuxt-on-the-edge.vercel.app/og-card.png" />
+      <Meta
+        name="og:image"
+        content="https://nuxt-on-the-edge.vercel.app/og-card.png"
+      />
     </Head>
     <div style="height: 100%">
       <AppBackground />
@@ -37,7 +50,13 @@ const generatedAt = useState(() => new Date().toISOString())
           <div class="block">
             <div class="contents">
               <span>Your city</span>
-              <strong :title="info.city === '-' ? 'GeoIP information could not be derived from your IP' : null">
+              <strong
+                :title="
+                  info.city === '-'
+                    ? 'GeoIP information could not be derived from your IP'
+                    : null
+                "
+              >
                 {{ info.city }}
               </strong>
             </div>
@@ -51,9 +70,7 @@ const generatedAt = useState(() => new Date().toISOString())
           </div>
         </div>
       </main>
-      <div class="debug">
-        Generated at {{ generatedAt }}
-      </div>
+      <div class="debug">Generated at {{ generatedAt }}</div>
     </div>
     <footer>
       <p class="company">
@@ -67,7 +84,11 @@ const generatedAt = useState(() => new Date().toISOString())
         on
         <NuxtLink to="https://vercel.com" target="_blank">Vercel</NuxtLink>
       </p>
-      <NuxtLink target="_blank" href="https://github.com/pi0/nuxt-on-the-edge" class="source">
+      <NuxtLink
+        target="_blank"
+        href="https://github.com/pi0/nuxt-on-the-edge"
+        class="source"
+      >
         <LogoGithub />
         Source
       </NuxtLink>
@@ -84,7 +105,7 @@ body {
 body {
   --fg: black;
   --bg: white;
-  --primary: #00DC82;
+  --primary: #00dc82;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -109,7 +130,6 @@ body {
     --bg: black;
   }
 }
-
 
 /* main */
 
@@ -310,19 +330,19 @@ svg.card {
   animation: grow 5s linear both infinite;
 }
 
-.card .orbits>g {
+.card .orbits > g {
   animation: spin 60s linear both infinite;
 }
 
-.card .orbits>g:nth-child(2) {
+.card .orbits > g:nth-child(2) {
   animation-duration: 80s;
 }
 
-.card .orbits>g:nth-child(3) {
+.card .orbits > g:nth-child(3) {
   animation-duration: 100s;
 }
 
-.card .orbits>g:nth-child(4) {
+.card .orbits > g:nth-child(4) {
   animation-duration: 120s;
 }
 
@@ -336,15 +356,15 @@ svg.card {
 }
 
 @media (min-width: 800px) {
-  .card .orbits>g:nth-child(2) {
+  .card .orbits > g:nth-child(2) {
     animation-duration: 120s;
   }
 
-  .card .orbits>g:nth-child(3) {
+  .card .orbits > g:nth-child(3) {
     animation-duration: 150s;
   }
 
-  .card .orbits>g:nth-child(4) {
+  .card .orbits > g:nth-child(4) {
     animation-duration: 180s;
   }
 }
@@ -361,10 +381,9 @@ svg.card {
 }
 
 @media (prefers-reduced-motion) {
-
   .card .satellite,
   .card .orbit,
-  .card .orbits>g {
+  .card .orbits > g {
     animation: none;
   }
 }
