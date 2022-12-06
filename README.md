@@ -30,4 +30,4 @@ yarn dev
 
 The easiest way to deploy your app is to link the repo to your Vercel account. Alternatively, you can create a production build locally using `yarn build`.
 
-Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.
+Checkout the [deployment documentation](https://nuxt.com/docs/getting-started/deployment#presets) for more information.
