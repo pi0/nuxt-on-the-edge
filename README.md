@@ -15,7 +15,7 @@ npx corepack enable
 Make sure to install the dependencies:
 
 ```bash
-yarn install
+pnpm install
 ```
 
 ## Development
@@ -23,11 +23,11 @@ yarn install
 Start the development server on http://localhost:3000
 
 ```bash
-yarn dev
+pnpm dev
 ```
 
 ## Production
 
-The easiest way to deploy your app is to link the repo to your Vercel account. Alternatively, you can create a production build locally using `yarn build`.
+The easiest way to deploy your app is to link the repo to your Vercel account. Alternatively, you can create a production build locally using `pnpm build`.
 
 Checkout the [deployment documentation](https://nuxt.com/docs/getting-started/deployment#presets) for more information.
